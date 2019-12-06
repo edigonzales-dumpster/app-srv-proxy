@@ -1,6 +1,6 @@
 FROM abiosoft/caddy:latest
 
-LABEL name="sogis/wmts-proxy"
+LABEL name="sogis/app-serv-proxy"
 LABEL vendor="AGI"
 LABEL url="https://agi.so.ch"
 LABEL summary="Image based on abiosoft/caddy."
