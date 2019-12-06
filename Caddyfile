@@ -1,0 +1,26 @@
+http://localhost {
+    tls stefan.ziegler.de@gmail.com
+
+    log stdout
+    errors stdout
+}
+
+# Entweder gemeinsames Netzwerk
+# oder 'irgendwie' direkt via
+# Domain ansprechen. Dann muss aber
+# alles für test, int, prod wiederholt 
+# werden.
+
+app-t.sogeo.services {
+    tls stefan.ziegler.de@gmail.com {
+        ca https://acme-staging-v02.api.letsencrypt.org/directory
+    }
+
+    proxy /ilivalidator app-t.sogeo.services:8181/ilivalidator {
+        transparent
+        without /ilivalidator
+    }
+
+    log stdout
+    errors stdout
+}
